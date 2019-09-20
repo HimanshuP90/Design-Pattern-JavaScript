@@ -1,0 +1,4 @@
+Why use JavaScript design patterns?
+1) Architecture :  i.e. layout of code
+2) Maintainability: ensure code can be easily improved and extended
+3) Reusability: save time amd make maintaining easier
