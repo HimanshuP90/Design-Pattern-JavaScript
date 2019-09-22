@@ -9,7 +9,31 @@
 
 
 // After creating new scope, we need to namespace our code so that we can access any methods we return.
+// we have declared Module in the global scope
 const Module = (function(){
-    // code 
-})();
+    
+    //Private methods
+    var privateMethod = function() {
+        // do something
+    };
 
+    //Public methods
+    var publicMethodTwo = function() {
+        //Revealing private stuff
+        privateMethod()
+    };
+    
+    //Public methods
+    var publicMethodThree = function() {
+        //code
+    }
+
+    return {
+        publicMethodOne: function() {
+            //code
+        },
+        someMethodTwo: publicMethodTwo,
+        someMethodThree: publicMethodThree
+    };
+
+})();
