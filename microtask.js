@@ -15,3 +15,10 @@ Promise.resolve()
 console.log("script end");
 
 //output:
+/**
+ *  script start
+ *  script end
+ *  promise1
+ *  promise2
+ *  setTimeout
+ */
