@@ -2,3 +2,8 @@ Why use JavaScript design patterns?
 1) Architecture :  i.e. layout of code
 2) Maintainability: ensure code can be easily improved and extended
 3) Reusability: save time amd make maintaining easier
+
+
+Layout: browser will determine how much space each element takes up and where to place it.
+Painting: he process of filling in pixels. It involves drawing out elements.
+Compositing: browser draws element to the screen in the correct order so the page renders correctly.
