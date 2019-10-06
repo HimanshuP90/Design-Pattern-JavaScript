@@ -3,7 +3,45 @@ Why use JavaScript design patterns?
 2) Maintainability: ensure code can be easily improved and extended
 3) Reusability: save time amd make maintaining easier
 
+-------------------------------------------------------------------------------------------
 
 Layout: browser will determine how much space each element takes up and where to place it.
 Painting: he process of filling in pixels. It involves drawing out elements.
 Compositing: browser draws element to the screen in the correct order so the page renders correctly.
+
+--------------------------------------------------------------------------------------------
+
+Promise.all() : accecpt an array of promises, and will attempt to fulfill all of them. 
+                exits early if just 1 promise get rejected.
+Promise.race() : accecpt an array of process, but return the first promise that is settled.
+                A settled promise can either be resolved or rejected.
+
+Tip: Do you want an array of promise results? Or, 
+     Do you simply want the results of the first settled promise?
+
+---------------------------------------------------------------------------------------------
+
+
+// Why you'd want to use debounce
+Say you want to detect how far a user has scrolled down a page and, 
+when they reach a certain point, you lazy load an image. You’d bind a scroll listener like so:
+
+It’s common practice to use either a debounce or throttle to limit the amount of times the 
+browser runs our callback function. The difference being:
+
+Throtle: fire the callback while the action is being performed for the defined iteration time.
+Debounce: fire the callback after the action has finished for the defined amount of time.
+
+----------------------------------------------------------------------------------------------
+
+When centering elements with CSS it’s good to be aware of the difference between block and inline level elements. Block elements can be centered on a page with margin: auto;, inline elements can be centered within it’s block level parent by setting text-align: center; on the parent.
+
+The way you styled your link makes it more like a block element to me. In this case I would do this:
+
+.button {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+max-width being necessary because block items are 100% wide by default.
+
