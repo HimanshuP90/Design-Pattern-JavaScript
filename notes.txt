@@ -45,3 +45,13 @@ The way you styled your link makes it more like a block element to me. In this c
 }
 max-width being necessary because block items are 100% wide by default.
 
+___________________________________________________________________________________________
+Component vs PureComponent
+Practical difference
+Practically, PureComponent is the same as Component in every way except that PureComponent 
+already implements the shouldComponentUpdate lifecycle callback to check for shallow equality. 
+If the new props being provided to PureComponent are the same as the old props, and if the new 
+state is the same as the old state, then the component will not be re-rendered.
+If a component always renders the exact same way given the same props and state,
+
+then that component can be declared as a PureComponent, otherwise use Component.
