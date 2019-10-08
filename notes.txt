@@ -34,7 +34,9 @@ Debounce: fire the callback after the action has finished for the defined amount
 
 ----------------------------------------------------------------------------------------------
 
-When centering elements with CSS it’s good to be aware of the difference between block and inline level elements. Block elements can be centered on a page with margin: auto;, inline elements can be centered within it’s block level parent by setting text-align: center; on the parent.
+When centering elements with CSS it’s good to be aware of the difference between block and inline level elements.
+Block elements can be centered on a page with margin: auto;, inline elements can be centered within it’s block level 
+parent by setting text-align: center; on the parent.
 
 The way you styled your link makes it more like a block element to me. In this case I would do this:
 
@@ -55,3 +57,59 @@ state is the same as the old state, then the component will not be re-rendered.
 If a component always renders the exact same way given the same props and state,
 
 then that component can be declared as a PureComponent, otherwise use Component.
+
+___________________________________________________________________________________________
+In an rough and simplified sketch, assuming the simplest possible HTTP request, no proxies and IPv4:
+
+1. Checks link's URL part. If not empty take that URL to be feteched.
+2. browser checks cache; if requested object is in cache and is fresh, skip to #9
+3. browser asks OS for server's IP address
+4. OS makes a DNS lookup and replies the IP address to the browser
+5. browser opens a TCP connection to server (this step is much more complex with HTTPS)
+6. browser sends the HTTP request through TCP connection
+7. browser receives HTTP response and may close the TCP connection, or reuse it for another request
+8. browser checks if the response is a redirect (3xx result status codes), authorization request (401), 
+    error (4xx and 5xx), etc.; these are handled differently from normal responses (2xx)
+9. if cacheable, response is stored in cache
+10. browser decodes response (e.g. if it's gzipped)
+11. browser determines what to do with response (e.g. is it a HTML page, is it an image, is it a sound clip?)
+12. browser renders response, or offers a download dialog for unrecognized types
+
+There are many other things happening in parallel to this (processing typed-in address, adding page to browser history,
+ displaying progress to user, notifying plugins and extensions, rendering the page while it's downloading, pipelining, 
+ connection tracking for keep-alive, etc.).
+
+_________________________________________________________________________________________________
+
+DOM selectors:
+
+1) To select a single element using any valid CSS selector use:
+When there are no elements matched it will return null.
+
+  document.querySelector('.foo') // class selector
+  document.querySelector('#foo') // id selector
+  document.querySelector('div') // tag selector
+  document.querySelector('[name='foo']') // attribute selector
+
+2) To select multiple elements use:
+  querySelectorAll return a static NodeList
+  document.querySelectorAll('p') // selects all <p> elements
+
+const arr = Array.from(document.querySelectorAll('p'));
+
+
+querySelectorAll: return static NodeList
+getElementsByTagName, getElementsByClassName: return live HTMLCollection
+
+
+// Adding Elements
+
+<a href="/home" class="active">Home</a>
+
+steps:
+const link = document.createElement('a');
+link.setAttribute('href', '/home');
+link.className = 'active';
+link.textContent = 'Home'
+
+document.body.appendChild(link);
