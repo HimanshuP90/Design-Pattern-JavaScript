@@ -213,3 +213,19 @@ v.go(); // "Underway in blue"
 
 var c = new Car("red");
 c.go(); // "Underway in red car"
+
+// Remove duplicate from unsorted array
+
+var input = [1, 2, 3, 3, 4, 5, 2, 6, 3, 6, 1];
+
+function removeDuplicate(arr) {
+  var result = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (result.indexOf(arr[i]) === -1) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+console.log(removeDuplicate(input));
