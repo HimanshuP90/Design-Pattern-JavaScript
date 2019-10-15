@@ -13,7 +13,7 @@ Compositing: browser draws element to the screen in the correct order so the pag
 
 Promise.all() : accecpt an array of promises, and will attempt to fulfill all of them. 
                 exits early if just 1 promise get rejected.
-Promise.race() : accecpt an array of process, but return the first promise that is settled.
+Promise.race() : accecpt an array of promises, but return the first promise that is settled.
                 A settled promise can either be resolved or rejected.
 
 Tip: Do you want an array of promise results? Or, 
@@ -35,10 +35,12 @@ Debounce: fire the callback after the action has finished for the defined amount
 ----------------------------------------------------------------------------------------------
 
 When centering elements with CSS it’s good to be aware of the difference between block and inline level elements.
-Block elements can be centered on a page with margin: auto;, inline elements can be centered within it’s block level 
+Block elements can be centered on a page with margin: auto;,
+inline elements can be centered within it’s block level 
 parent by setting text-align: center; on the parent.
 
-The way you styled your link makes it more like a block element to me. In this case I would do this:
+The way you styled your link makes it more like a block element to me.
+In this case I would do this:
 
 .button {
   display: block;
