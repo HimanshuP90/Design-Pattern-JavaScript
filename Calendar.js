@@ -15,7 +15,7 @@ export default class Calendar extends React.Component {
     super(props);
     this.width = props.width || "350px";
     this.style = props.style || {};
-    this.style.width = this.width; // add this
+    this.style.width = this.width;
   }
 
   weekdays = moment.weekdays(); //["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
@@ -158,15 +158,15 @@ export default class Calendar extends React.Component {
         placeholder="year"
       />
     ) : (
-      <span
-        className="label-year"
-        onDoubleClick={e => {
-          this.showYearEditor();
-        }}
-      >
-        {this.year()}
-      </span>
-    );
+        <span
+          className="label-year"
+          onDoubleClick={e => {
+            this.showYearEditor();
+          }}
+        >
+          {this.year()}
+        </span>
+      );
   };
 
   onDayClick = (e, day) => {
