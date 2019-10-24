@@ -1,0 +1,25 @@
+The @font-face rule allows custom fonts to be loaded on a webpage.
+Once added to a stylesheet, the rule instructs the browser to download the font
+from where it is hosted, then display it as specified in the CSS.
+
+Different Font Formats
+    TrueType Fonts (TTF)
+    OpenType Fonts (OTF)
+    The Web Open Font Format (WOFF)
+    The Web Open Font Format (WOFF 2.0)
+    SVG Fonts/Shapes
+    Embedded OpenType Fonts (EOT)
+
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot');
+  src: url('webfont.eot?#iefix') format('embedded-opentype'),
+       url('webfont.woff2') format('woff2'),
+       url('webfont.woff') format('woff'), 
+       url('webfont.ttf')  format('truetype'), 
+       url('webfont.svg#svgFontName') format('svg'); 
+}
+
+body {
+  font-family: 'MyWebFont', Fallback, sans-serif;
+}
