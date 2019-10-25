@@ -143,7 +143,7 @@ console.log(maxStockProfit([10, 18, 4, 5, 9, 16, 12]));
 
 // clone object;
 
-const clone = function(object) {
+const clone = function (object) {
   let newObject = {};
   for (let key in object) {
     newObject[key] = object[key];
@@ -153,7 +153,7 @@ const clone = function(object) {
 
 // deepclone
 
-const deepClone = function(object) {
+const deepClone = function (object) {
   let newObject = {};
   for (let key in object) {
     if (typeof object[key] === "object") {
@@ -169,7 +169,7 @@ const deepClone = function(object) {
 
 const o = {
   a: 2,
-  m: function() {
+  m: function () {
     return this.a + 1;
   }
 };
@@ -190,7 +190,7 @@ function Vehical(color) {
 }
 
 // add an instance method
-Vehical.prototype.go = function() {
+Vehical.prototype.go = function () {
   return "Underway in" + this.color;
 };
 
@@ -203,7 +203,7 @@ function Car(color) {
 Car.prototype = new Vehical();
 
 // override the instance method
-Car.prototype.go = function() {
+Car.prototype.go = function () {
   return Vehical.prototype.go.call(this) + "car";
 };
 
@@ -229,3 +229,16 @@ function removeDuplicate(arr) {
 }
 
 console.log(removeDuplicate(input));
+
+
+// events: Events can represent everything from basic user interactions 
+// to automated notifications of things happening in the rendering model.
+
+/**
+ * Resource events
+ * Network events
+ * Focus events
+ * WebSocket events
+ * Session History events
+ * CSS Animation events
+ */
