@@ -242,3 +242,21 @@ console.log(removeDuplicate(input));
  * Session History events
  * CSS Animation events
  */
+
+
+
+// Map 
+
+let distances = [
+  { from: 'New Delhi', to: 'Ayodhya', distance: 688 },
+  { from: 'New Delhi', to: 'Kanpur', distance: 495 },
+  { from: 'Lucknow', to: 'Delhi', distance: 553 }
+]
+
+// convert distance to miles
+let mappedDistances = distances.map(item => ({
+  ...item,
+  distance: item.distance * 0.621371
+}))
+
+console.log(mappedDistances)
