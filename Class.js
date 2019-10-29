@@ -138,3 +138,41 @@ class ListBinding {
 
 const myList = document.getElementById('myList');
 const listBinding = new ListBinding(myList)
+
+
+// Factory Function
+function createCircle(radius) {
+    return {
+        radius,
+        draw: function () {
+            console.log('draw')
+        }
+    };
+}
+const circle = createCircle(1);
+
+
+// Constructor function
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function () {
+        console.log('draw')
+    }
+}
+const another = new Circle(1)
+// const another = Circle.call({}, 1) i.e, same as above
+
+
+let number = 10;
+function increase(number) {
+    number++;
+}
+increase(number);
+console.log(number); // 10 i.e. primitives(number, boolean, string, null, undefined, symbol) copied by value i.e. Values Types
+
+let obj = { value: 10 }
+function increase(obj) {
+    obj.value++;
+}
+increase(obj);
+console.log(obj) // {value: 11} i.e. object  i.e. Reference Types(Object, Function, Array) copied by their reference
