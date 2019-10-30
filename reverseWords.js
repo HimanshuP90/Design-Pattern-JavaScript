@@ -260,3 +260,41 @@ let mappedDistances = distances.map(item => ({
 }))
 
 console.log(mappedDistances)
+
+//First non repeating char
+function firstNonRep(str) {
+  let len = str.length;
+  let char, charCount = {}, newStr = [];
+  for (let i = 0; i < len; i++) {
+    char = str[i];
+    if (charCount[str[i]]) {
+      charCount[str[i]]++;
+    } else {
+      charCount[str[i]] = 1;
+    }
+  }
+  for (let j in charCount) {
+    if (charCount[j] == 1) newStr.push(j);
+  };
+  return newStr.join('');
+}
+firstNonRep('the quick brown fox jumps then quickly blow air') // "fxjmpsya"
+
+// remove duplicate char
+function firstNonRep(str) {
+  let len = str.length;
+  let char, charCount = {}, newStr = [];
+  for (let i = 0; i < len; i++) {
+    char = str[i];
+    if (charCount[str[i]]) {
+      charCount[str[i]]++;
+    } else {
+      charCount[str[i]] = 1;
+    }
+  }
+  for (let j in charCount) {
+    if (charCount[j] == 1) newStr.push(j);
+  };
+  return newStr.join('');
+}
+firstNonRep('Learn more javascript dude') //"Lnmojvsciptu"
