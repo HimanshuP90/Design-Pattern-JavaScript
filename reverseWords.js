@@ -298,3 +298,35 @@ function firstNonRep(str) {
   return newStr.join('');
 }
 firstNonRep('Learn more javascript dude') //"Lnmojvsciptu"
+
+
+// Max occur in string
+
+
+
+function maxChar(str) {
+  const charMap = {};
+  let max = 0;
+  let maxChar = '';
+
+  // create character map
+  for (let char of str) {
+    if (charMap[char]) {
+      charMap[char]++;
+    } else {
+      charMap[char] = 1;
+    }
+  }
+
+  // find the most commonly used character
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char];
+      maxChar = char;
+    }
+  }
+
+  return maxChar;
+}
+
+console.log(maxChar('JavaScript'))
