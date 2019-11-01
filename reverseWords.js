@@ -330,3 +330,19 @@ function maxChar(str) {
 }
 
 console.log(maxChar('JavaScript'))
+
+
+// Longest Word
+
+function longestWord(str) {
+  let strArr = str.split(" ");
+  let longestWord = ""
+  for (let word of strArr) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+
+}
+console.log(longestWord('I love JavaScript and doing practice daily'))
