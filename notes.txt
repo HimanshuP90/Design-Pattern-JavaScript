@@ -115,3 +115,7 @@ link.className = 'active';
 link.textContent = 'Home'
 
 document.body.appendChild(link);
+
+// 
+Object.create():  methord is used to create a new object with the specified prototype object
+ and properties.
