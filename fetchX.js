@@ -15,7 +15,7 @@ xhr.onload = function () {
 
 };
 
-// Create and send a GET request
+// Create and send a GET request 
 // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
 // The second argument is the endpoint URL
 xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts');
