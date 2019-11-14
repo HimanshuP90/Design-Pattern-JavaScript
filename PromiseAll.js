@@ -17,3 +17,23 @@ function initalizeUserContent() {
 }
 
 initalizeUserContent();
+
+// Static Methods: Promise.All
+function askFirstDealer() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(8000), 3000)
+  })
+}
+function askSecondtDealer() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(12000), 5000)
+  })
+}
+function askThirdDealer() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(10000), 8000)
+  })
+}
+
+Promise.all([askFirstDealer(), askSecondtDealer(), askThirdDealer()])
+  .then(prices => console.log(prices))
