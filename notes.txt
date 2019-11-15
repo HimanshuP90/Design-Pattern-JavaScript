@@ -10,7 +10,7 @@ Painting: he process of filling in pixels. It involves drawing out elements.
 Compositing: browser draws element to the screen in the correct order so the page renders correctly.
 
 --------------------------------------------------------------------------------------------
-
+Promise: is eventual compeletion of asyn task and take executor function ith two argument
 Promise.all() : accecpt an array of promises, and will attempt to fulfill all of them. 
                 exits early if just 1 promise get rejected.
 Promise.race() : accecpt an array of promises, but return the first promise that is settled.
@@ -119,3 +119,67 @@ document.body.appendChild(link);
 // 
 Object.create():  methord is used to create a new object with the specified prototype object
  and properties.
+
+
++++++++++++++++++++++++++++++
+JS source code -> Parser -> AST -> Interpreter -> bytecode ->
+---> optimizing compiler along with profiling data -> highly-optimized machine code
+
+The interpreter in V8 is called Ignition
+
+If at some point one of the assumptions turns out to be incorrect, the optimizing compiler
+deoptimizes and goes back to the interpreter.
+
+//JavaScript’s object model
+
+[[Value]] : itself
+[[Writable]]:  which determines whether the property can be reassigned to,
+[[Enumerable]]:  which determines whether the property shows up in for-in loops,
+[[Configurable]]:  which determines whether the property can be deleted.
+
+const obj = {
+  x: 5,
+  y: 6
+};
+
+Also can find 
+
+Property attributes for any given object and property in JavaScript by using the
+Object.getOwnPropertyDescriptor API:
+
+Object.getOwnPropertyDescriptor(obj, 'x')
+{value: 5, writable: true, enumerable: true, configurable: true}
+
+x: Object: Property Attributes
+  [[value]]: 5
+  [[writable]]: true,
+  [[Enumrable]]: true,
+  [[Configurable]]: true
+y: 
+  [[value]]: 6
+  [[writable]]: true,
+  [[Enumrable]]: true,
+  [[Configurable]]: true
+
+Object.getOwnPropertyDescriptors(obj)
+  x: {value: 5, writable: true, enumerable: true, configurable: true}
+  y: {value: 6, writable: true, enumerable: true, configurable: true}
+  __proto__: Object
+
+const arr = ['a', 'b'];
+
+Object.getOwnPropertyDescriptors(arr)
+  0: {value: "a", writable: true, enumerable: true, configurable: true}
+  1: {value: "b", writable: true, enumerable: true, configurable: true}
+  length: {value: 2, writable: true, enumerable: false, configurable: false}
+  __proto__: Object
+
+// Define a new property directly on an object, or modifies an existing property on an object,
+   and returns the object.
+
+Object.defineProperty(obj, prop, descriptor)
+
+// V8 used to have two compilers:
+
+fll-codegen
+crankshaft
