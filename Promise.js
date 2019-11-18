@@ -75,3 +75,5 @@ logToConsole(name) // error bcz excpect promise
 
 const promisifiedValue = Promise.resolve(name);
 logToConsole(logToConsole) // Himanshu
+
+
