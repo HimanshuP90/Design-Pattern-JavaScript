@@ -5,7 +5,7 @@
  * indexOf(value) : return the position of the first occurence of specified value in a string, if no value to search return -1
  */
 
-let OSName = 'Unknown OS';
+let OSName = 'Unknown OS, Please check another one';
 if (navigator.userAgent.indexOf("Win") != -1) OSName = "Windows";
 if (navigator.userAgent.indexOf("Mac") != -1) OSName = "Macintosh";
 if (navigator.userAgent.indexOf("Linux") != -1) OSName = "Linux";
