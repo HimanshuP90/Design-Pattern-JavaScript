@@ -192,3 +192,14 @@ An element with greater stack order is always in front of an element with a lowe
 //  Load Balancing
 Load Balancing is nothing but distributing the traffic to different servers.
 
+
+// What is hoisting ?
+Hoisting is a JavaScript mechanism where variables and function declartions are moved to the top of their scope
+before code excecution
+
+// What is closure ?
+A closure is an inner function that has access to the outer functions variable scope chain
+
+//Enzyme: When to use shallow, render, or mount?
+shallow method is used to render the single component that we are testing. It does not render child components.
+mount method renders the full DOM including the child components of the parent component that we are running the tests.
