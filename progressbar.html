@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Progress Bar</title>
+</head>
+<body>
+    <div class="bar-container">
+        <div class="bar" />
+    </div>
+    <button onclick="fillBar(2)">Start</button>
+    
+    <script>
+        function fillBar(seconds) {
+            const bar = document.querySelector('.bar');
+            let addPercent = 0;
+            const interval = setInterval(() => {
+                bar.style.width = addPercent + '%';
+                addPercent++;
+                console.log('running at ...', addPercent)
+                if(addPercent >= 100) {
+                    clearInterval(interval)
+                }
+            }, (seconds*100)/100)
+        }
+    
+    </script>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        .bar-container{
+            width: 300px;
+            height: 30px;
+            margin: 40px;
+            background-color: gray;
+        }
+        .bar{
+            background-color: green;
+            height: 100%;
+            width: 0%;
+        }
+    </style>
+</body> 
+</html>
