@@ -203,3 +203,30 @@ A closure is an inner function that has access to the outer functions variable s
 //Enzyme: When to use shallow, render, or mount?
 shallow method is used to render the single component that we are testing. It does not render child components.
 mount method renders the full DOM including the child components of the parent component that we are running the tests.
+
+Throttling a button click so we can’t spam click
+Throttling an API call
+Throttling a mousemove/touchmove event handler
+Debouncing a resize event handler
+Debouncing a scroll event handler
+Debouncing a save function in an autosave feature
+https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
+
+
+What is a Task Runner?
+
+perform repetitve tasks
+-: Prefixing CSS rules
+-: Compiling SASS files into CSS
+-: Minifying JS/CSS files
+-: Concatenating files
+
+Task Runner: Grunt, Gulp
+
+
+Gulp.js task runner:
+Moving/Copying Files
+Concatenate JavaScript Files
+Minify / Uglify JavaScript Files
+Compile Sass/scss Files
+Optimize Images with Imagemin
