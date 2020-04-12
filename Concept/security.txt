@@ -1,0 +1,48 @@
+Cross domain
+
+note! The img tag is not restricted by the same-origin policy and can load resources across domains.
+
+XSS attack
+
+XSS means Cross Site Script means cross-site scripting attack. XSS attack refers to an attacker injecting malicious code on a website and tampering with the client webpage through a malicious script, thereby controlling the browser or obtaining user privacy data when the user browses the webpage .
+
+The attack will send some private data such as cookies and sessions to the attacker, redirect the victim to a website controlled by the attacker, and so on.
+
+Prevent
+
+HttpOnly prevents interception of cookies. The browser will prohibit the Javascript of the page from accessing cookies with the HttpOnly attribute. Therefore, the cookie hijacking attack after the XSS attack is prevented.
+
+Input check. Check, filter, and escape user input.
+
+// In vuejs, if you enter content with script tags, 
+const  decodingMap  = {
+   ' & lt; ' :  ' < ' ,
+   ' & gt; ' :  ' > ' ,
+   ' & quot; ' :  ' " ' ,
+   ' & amp; ' :  ' & ' ,
+   ' & # 10; ' :  ' \ n ' 
+}
+Output check.
+CSRF Cross Site Request Forgery.
+
+Browser cookie policy
+
+A cookie is some data that the server sends to the browser and saves locally. It will be carried and sent to the server the next time the browser makes a request to the same server.
+
+There are two types of cookies on the browser, SessionCookie and Permanent Cookies. They are session cookies and persistent cookies. The latter requires an expiration time or validity period.
+
+In addition, each cookie has a domain associated with it. This domain is usually specified by the domain attribute. If the domain of the cookie and the page are the same, it is a first-party cookie, and if the domain of the cookie and the page are different, it is a third-party cookie.
+
+CSRF attack
+
+The attacker uses an img tag to point to a link to the attack environment. If the user clicks on this tag to access the attack environment, he will initiate a request represented by this URL to the server. Will be verified by the server.
+
+The attacker used the victim's cookies to trick the server into trust, but he couldn't get the cookies and couldn't see the contents of the cookies. You can only send a request to the server to execute the command described in the request to change the server data.
+
+Prevent
+
+Verification code — CSRF attacks are often users who construct a network request without their knowledge. The second verification code forces the user to interact with the application to complete the request.
+
+The Referer Check HTTP header has a Referer field that records the address of the request source. So if the request comes from an illegal source, then this request can be blocked.
+
+Token verification Put information that the attacker cannot forge in the request, and this information is not stored in the cookie. For example, a randomly generated token is added to the URL parameter, and the server verifies whether the token is correct.
