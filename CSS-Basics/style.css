@@ -1,0 +1,30 @@
+
+span.box1{
+    display: inline; 
+    width: 100px;
+    height: 160px;
+    padding: 18px 20px 18px 10px;
+    background-color: palegreen;
+    margin: 15px 0px 15px 0px;
+}
+
+span.box1:hover {
+    display: inline-block; 
+    width: 100px;
+    height: 160px;
+    padding: 18px;
+    background-color: palegreen;
+}
+/* 
+span.box2 {
+    display: block; 
+    width: 100px;
+    height: 60px;
+    padding: 18px;
+    background-color: palegreen;
+} */
+
+/*  inline: not allowed to set height and width
+    inline-block: allowed to set height and width
+    block: alowed set height and widht but not side by side its take all width
+*/
